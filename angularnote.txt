@@ -1,0 +1,136 @@
+Angular 
+----------
+
+
+-open source frontend Technology
+- maintend by Google 
+- based on typescript  type should be specifed 
+              typescipt is superscirpt of js 
+
+-Framework 
+-returns html and css ,Typescript for behaviour
+-single page applications-runs index.js
+-latest version -17 -november 
+
+
+Basic commands 
+--------------
+1. to create project -  ng new project-name 
+2. inorder to run angular commands - angular clis(command line interface) 
+       - ng v to check if it has angular cli
+       -npm install -g @angular/cli@version 
+
+3. to run -   ng serve --open(to run and open in deault browser)
+ng s --open
+
+Files 
+-----
+.gitignore-hold file names that to be ignored while pushing to git 
+package.json-holds all the dependencies used in our application
+package-lock.json version 
+node_modules - copies 
+README - description about the project 
+.editorConfig - configuration of the editor 
+tsconfiguration - typescript configuration 
+src -source  
+       -style.css - global style 
+       -main.ts -global behaviour 
+       -index.html -file that only render in browser
+        <app-root></app-root> selector
+component - basic unit of desgin 
+       -4 files here 
+       html,css, spec.ts, .ts 
+       app.compoennt.html -content 
+       app.component.ts -behaviour 
+       app.component.css -style 
+       app.comoinent.spec.ts -for testing
+
+app-routing.module.ts - to setup path
+app-module.ts -third part contents(componenets,librbry etc)
+
+Create compnets 
+----------------
+ng generate component component-name 
+ng g c component-name
+
+app.module.ts -it holds third party components(componenets,librbary etc)
+
+
+
+Data Binding(data sharing)-data sharing with the components 
+1.oneway databinding 
+      1.ts(compoenet)- html(view) 
+              -string interpolation-  {{data}}
+              -Property BINDING - (attribute more info about tag) - [attributes]='values'
+      2.html(view) -ts (componenet)
+              buton clicking scenario 
+              - data shering using events(click,change,submit) --(events)="values"
+              - data sharing using $events  - (events)="value($events)"  input box value
+              -templete variable - #variablename
+2.two way databinding
+            -data share in both direction - [(ngModal)] - formsModule 
+            - must provide name attribute to the tag in which  [(ngModal)] ng modal is placed (thirdparty)
+
+
+Routing(path set )
+---------
+       -routes in app-routing.ts -where path is steup
+       -router-outlet tag - app compoenent
+       - routerLink - to navigate
+
+
+dependency Injection
+-----------------------
+data sharing between component and a predefined class/ class.(or bwt)
+- constructor (access-specifiers  compoenentproperty:dependent class){}     //property varibale //constructor is a predefined method in a class
+-contsructor is a defult method imside a class 1 prefernce 
+-compoenent depedemcy injection not possible
+
+
+servcies 
+-------
+to share data between componenets 
+command -ng g s foldername/servicename 
+dependcy injection
+
+
+Directives 
+-----------
+they are used to give additional beviour to thier html document
+
+3 types pf directives 
+       1.component directives ->compoent display then use the compoennt tag
+       2.structural  directives
+       3.attriubte diretives
+
+
+sturcture - conditonal rendering 
+       -*ngIf 
+       -*ngFor (repeated item render)
+       -*ngSwitch
+
+attirubute diretive - used to provide styles to html elements
+
+
+#templeterefernce veriable - gives all informaion about the tag
+#nnnn =''
+
+
+observeble
+---------
+
+diffrence between promise and observble
+-------------------------------
+both are used to resolve httprequest
+in observerble it can resole more than one request commpared to one in promise
+
+in promise response is get in .then but in observble we get repsonse in  .subscibe
+
+
+
+to do htp calls
+we have to import httpclientmodules
+    FormsModule, //two way data bidning
+    HttpClientModule //http request
+		inject httpclient 
+			then method 

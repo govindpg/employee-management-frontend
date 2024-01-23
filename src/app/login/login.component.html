@@ -1,0 +1,37 @@
+<div>
+  <div
+    style="min-height: 80vh"
+    class="w-100 d-flex justify-content-center align-items-center"
+  >
+    <div
+      class="card border border-grey shadow"
+      style="width: 35rem; height: 25rem"
+    >
+      <div class="card-body">
+        <h5 class="card-title text-center fw-bold fs-3 mt-4">Login</h5>
+        <div class="row">
+          <div class="col-lg-6 mt-5">
+            <img class="mt-4"
+              src="https://snvidyabhavanchenthrapinni.eschoolweb.org/assets/img/gallery/login.png"
+              alt="noimage"
+              width="100%"
+            />
+          </div>
+          <div class="col-lg-6 mt-3">
+            <div >
+              <form (ngSubmit)="login()" #loginform="ngForm">
+                   <input class="form-control mt-5" email required placeholder="Enter Email" [(ngModel)]="email" name="email" #useremail=ngModel />
+                   <span class="m-2 text-danger" *ngIf="useremail.invalid && useremail.touched">Invalid Username</span>
+              <input class="form-control mt-3"  type="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{4,}$" placeholder="Enter Password" [(ngModel)]="password"  name="password " #userpassword=ngModel />
+              <span class="m-2 text-danger" *ngIf="userpassword.invalid && userpassword.touched">Invalid Passwrord</span>
+
+              <button type="submit" [disabled]="loginform.invalid" class="w-100 btn btn-info mt-3">Login</button>  
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
